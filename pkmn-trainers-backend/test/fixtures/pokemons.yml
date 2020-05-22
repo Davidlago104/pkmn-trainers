@@ -2,8 +2,10 @@
 
 one:
   name: MyString
-  species: MyString
+  location: MyString
+  move: MyString
 
 two:
   name: MyString
-  species: MyString
+  location: MyString
+  move: MyString

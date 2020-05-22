@@ -46,6 +46,6 @@ class PokemonsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def pokemon_params
-      params.require(:pokemon).permit(:name, :species)
+      params.require(:pokemon).permit(:name, :location, :move)
     end
 end
