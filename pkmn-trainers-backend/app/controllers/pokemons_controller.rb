@@ -10,13 +10,15 @@ class PokemonsController < ApplicationController
 
   # GET /pokemons/1
   def show
-    render json: @pokemon
+    @pokemon = Pokemon.find_by(id: params[:id])
+
+    render json: @pokemon, status: 402
   end
 
   # POST /pokemons
   def create
     @pokemon = Pokemon.new(pokemon_params)
-
+    # byebug
     if @pokemon.save
       render json: @pokemon, status: :created, location: @pokemon
     else
@@ -46,6 +48,6 @@ class PokemonsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def pokemon_params
-      params.require(:pokemon).permit(:name, :location, :move)
+      params.require(:pokemon).permit(:name, :location, :move, :trainer_id)
     end
 end
