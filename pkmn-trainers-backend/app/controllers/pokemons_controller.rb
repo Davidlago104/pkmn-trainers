@@ -4,8 +4,8 @@ class PokemonsController < ApplicationController
   # GET /pokemons
   def index
     @pokemons = Pokemon.all
-
-    render json: @pokemons
+    serialized_data = PokemonSerializer.new(@pokemons).serialized_json
+    render json: serialized_data
   end
 
   # GET /pokemons/1
