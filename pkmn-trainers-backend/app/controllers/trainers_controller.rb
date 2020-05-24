@@ -4,8 +4,8 @@ class TrainersController < ApplicationController
   # GET /trainers
   def index
     @trainers = Trainer.all
-
-    render json: @trainers
+    serialized_data = TrainerSerializer.new(@trainers).serialized_json
+    render json: serialized_data
   end
 
   # GET /trainers/1
