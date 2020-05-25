@@ -1,4 +1,23 @@
 const pokemonMaker = document.querySelector("#pokemon-form")
+const pokemonButton = document.querySelector("#show-pokemon")
+
+pokemonButton.addEventListener("click", function(e){
+    e.preventDefault();
+    fetch('http://localhost:3000/pokemons')
+    .then(function(res){
+        return res.json()
+    })
+    .then(function(pokemons){
+        const pokemonContainer = document.querySelector("#poke-container")
+        console.log(pokemons)
+
+        pokemons.data.forEach(function(pokemon){
+            const pokemonEl = document.createElement('p')
+            pokemonEl.innerText = pokemon.attributes.name
+            pokemonContainer.appendChild(pokemonEl)
+        })
+    })
+})
 
 console.log(pokemonMaker)
 
