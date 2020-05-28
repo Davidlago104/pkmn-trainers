@@ -11,12 +11,12 @@
 #     Pokemon.create([{
 #         name: Faker::Games::Pokemon.name,
 #         location: Faker::Games::Pokemon.location,
-#         move: Faker::Games::Pokemon.move,
+#         move: Faker::Games::Pokemon.move
 #         trainer_id: 1
 #     }])
 # end
 # pokemons = Pokemon.create(name:"Pikachu", location:"Pallet Town", move:"Thundershock", trainer_id: 1)
-
+# trainers = Trainer.create(name: "David", age: 24)
 # puts "all done!"
 
 

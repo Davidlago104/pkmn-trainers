@@ -1,21 +1,23 @@
-const pokemonMaker = document.querySelector("#pokemon-form")
-const pokemonButton = document.querySelector("#show-pokemon")
-const trainerButton = document.querySelector("#show-trainers")
-const trainerMaker = document.querySelector("#trainer-form")
+const pokemonMaker = document.getElementById("pokemon-form")
+const pokemonButton = document.getElementById("show-pokemon")
+const trainerButton = document.getElementById("show-trainers")
+const trainerMaker = document.getElementById("trainer-form")
 
 pokemonButton.addEventListener("click", function(e){
-
     fetch('http://localhost:3000/pokemons')
     .then(function(res){
         return res.json()
     })
     .then(function(pokemons){
-        const pokemonContainer = document.querySelector("#poke-container")
+        const pokemonContainer = document.getElementById("poke-container")
         console.log(pokemons)
+        const pokemonContainerEmpty = document.getElementById("poke-container")
 
-        pokemons.data.forEach(function(pokemon){
+        pokemonContainerEmpty.innerHTML = " "
+
+        pokemons.data.forEach(function (pokemon) {
             const pokemonEl = document.createElement('p')
-            pokemonEl.innerText = pokemon.attributes.name
+             pokemonEl.innerText = pokemon.attributes.name
             pokemonContainer.appendChild(pokemonEl)
         })
     })
@@ -50,12 +52,17 @@ pokemonMaker.addEventListener("submit", function(e){
     .then(function (res){
         return res.json
     })
-    .then(function(pokemons){
-        console.log(pokemons)
+    .then(function(pokemon){
+        console.log(pokemon)
+        const pokemonContainer = document.getElementById("poke-container")
+        const pokemonEl = document.createElement('p')
+        pokemonEl.innerText = pokemon.name
+
+        console.log(pokemonEl)
     })
 })
 
-trainerMaker.addEventListener('click', function(e) {
+trainerMaker.addEventListener("submit", function(e) {
 
     const name = document.querySelector("#n")
     const age = document.querySelector("#a")
@@ -74,10 +81,15 @@ trainerMaker.addEventListener('click', function(e) {
         })
     })
     .then(function (res) {
-        return res.json
+        return res.json()
     })
-    .then(function(trainers){
-        console.log(trainers)
+    .then(function(trainer){
+        console.log(trainer)
+        const trainerContainer = document.getElementById("trainer-container")
+        const trainerEl = document.createElement('p')
+        trainerEl.innerText = trainer.name
+        
+        console.log(trainerEl)
     })
 })
 
@@ -88,32 +100,13 @@ trainerButton.addEventListener("click", function (e) {
             return res.json()
         })
         .then(function (trainers) {
-            const trainerContainer = document.querySelector("#trainer-container")
+            const trainerContainerEmpty = document.getElementById("trainer-container-text")
             console.log(trainers)
-
+            trainerContainerEmpty.innerHTML = " "
             trainers.data.forEach(function (trainer) {
                 const trainerEl = document.createElement('p')
                 trainerEl.innerText = trainer.attributes.name
-                trainerContainer.appendChild(trainerEl)
-            })
-        })
-})
-
-
-pokemonButton.addEventListener("click", function (e) {
-
-    fetch('http://localhost:3000/pokemons')
-        .then(function (res) {
-            return res.json()
-        })
-        .then(function (pokemons) {
-            const pokemonContainer = document.querySelector("#poke-container")
-            console.log(pokemons)
-
-            pokemons.data.forEach(function (pokemon) {
-                const pokemonEl = document.createElement('p')
-                pokemonEl.innerText = pokemon.attributes.name
-                pokemonContainer.appendChild(pokemonEl)
+                trainerContainerEmpty.appendChild(trainerEl)
             })
         })
 })
