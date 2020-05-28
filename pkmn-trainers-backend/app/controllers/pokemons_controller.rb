@@ -18,7 +18,6 @@ class PokemonsController < ApplicationController
   # POST /pokemons
   def create
     @pokemon = Pokemon.new(pokemon_params)
-    # byebug
     if @pokemon.save
       render json: @pokemon, status: :created, location: @pokemon
     else

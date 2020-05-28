@@ -4,7 +4,7 @@ const trainerButton = document.querySelector("#show-trainers")
 const trainerMaker = document.querySelector("#trainer-form")
 
 pokemonButton.addEventListener("click", function(e){
-    e.preventDefault();
+
     fetch('http://localhost:3000/pokemons')
     .then(function(res){
         return res.json()
@@ -24,7 +24,7 @@ pokemonButton.addEventListener("click", function(e){
 console.log(pokemonMaker)
 
 pokemonMaker.addEventListener("submit", function(e){
-    e.preventDefault();
+
 
     const name = document.querySelector("#p")
     const location = document.querySelector("#l")
@@ -56,7 +56,7 @@ pokemonMaker.addEventListener("submit", function(e){
 })
 
 trainerMaker.addEventListener('click', function(e) {
-    e.preventDefault();
+
     const name = document.querySelector("#n")
     const age = document.querySelector("#a")
 
@@ -101,7 +101,7 @@ trainerButton.addEventListener("click", function (e) {
 
 
 pokemonButton.addEventListener("click", function (e) {
-    e.preventDefault();
+
     fetch('http://localhost:3000/pokemons')
         .then(function (res) {
             return res.json()

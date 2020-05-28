@@ -5,18 +5,18 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-require 'faker'
-puts "making seeds!"
-5.times do 
-    Pokemon.create([{
-        name: Faker::Games::Pokemon.name,
-        location: Faker::Games::Pokemon.location,
-        move: Faker::Games::Pokemon.move,
-        trainer_id: 1
-    }])
-end
+# require 'faker'
+# puts "making seeds!"
+# 5.times do 
+#     Pokemon.create([{
+#         name: Faker::Games::Pokemon.name,
+#         location: Faker::Games::Pokemon.location,
+#         move: Faker::Games::Pokemon.move,
+#         trainer_id: 1
+#     }])
+# end
 # pokemons = Pokemon.create(name:"Pikachu", location:"Pallet Town", move:"Thundershock", trainer_id: 1)
 
-puts "all done!"
+# puts "all done!"
 
 
