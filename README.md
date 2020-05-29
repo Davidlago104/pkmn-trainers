@@ -1,4 +1,4 @@
-- The application must be an HTML, CSS, and JavaScript frontend with a Rails API backend. All interactions between the client and the server must be handled asynchronously (AJAX) and use JSON as the communication format.
+<!-- - The application must be an HTML, CSS, and JavaScript frontend with a Rails API backend. All interactions between the client and the server must be handled asynchronously (AJAX) and use JSON as the communication format. -->
 
 - The JavaScript application must use Object Oriented JavaScript (classes) to encapsulate related data and behavior.
 
