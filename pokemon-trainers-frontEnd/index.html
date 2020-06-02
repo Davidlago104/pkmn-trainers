@@ -3,6 +3,14 @@
     <head>
         <meta charset="utf-8">
         <title>Pokemon!</title>
+        <div class="button" href="">
+            <button id="homeButton">Home</button>
+            <script type="text/javascript">
+                document.getElementById("homeButton").onclick = function() {
+                    location.href = "localhost:3000/trainers"
+                };
+            </script>
+        </div>
     </head>
     <body>
         <h1>Welcome to the world of pokemon!</h1>
@@ -31,6 +39,7 @@
         <div id="trainer-container-text">
             
         </div>
+
         
         <button id="show-pokemon" type="button" name="button">Click me to see the pokemans</button>
         <button id="show-trainers" type="button" name="button">Click me to see the trainers</button>

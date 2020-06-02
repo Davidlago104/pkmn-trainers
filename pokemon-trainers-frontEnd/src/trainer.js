@@ -1,4 +1,3 @@
-
 const trainerButton = document.getElementById("show-trainers")
 const trainerMaker = document.getElementById("trainer-form")
 
