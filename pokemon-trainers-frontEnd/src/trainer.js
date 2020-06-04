@@ -1,12 +1,9 @@
 const trainerButton = document.getElementById("show-trainers")
 const trainerMaker = document.getElementById("trainer-form")
+const name = document.querySelector("#n")
+const age = document.querySelector("#a")
 
-
-trainerMaker.addEventListener("submit", function (e) {
-    e.preventDefault();
-    const name = document.querySelector("#n")
-    const age = document.querySelector("#a")
-
+trainerMaker.addEventListener("submit", function () {
     fetch("http://localhost:3000/trainers", {
         method: "POST",
         headers: {

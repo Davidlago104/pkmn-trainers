@@ -1,6 +1,19 @@
 const pokemonMaker = document.getElementById("pokemon-form")
 const pokemonButton = document.getElementById("show-pokemon")
+const move = document.querySelector("#m")
+const trainer_id = document.querySelector("#t")
 
+class Pokemon {
+    constructor(name, location, move, trainer_id){
+        this.name = name;
+        this.location = location;
+        this.move = move;
+        this.trainer_id = trainer_id;
+    }
+    cry() {
+        return `${this.name}`;
+    }
+}
 pokemonButton.addEventListener("click", function (e) {
     fetch('http://localhost:3000/pokemons')
         .then(function (res) {
@@ -21,21 +34,17 @@ pokemonButton.addEventListener("click", function (e) {
         })
 })
 
-console.log(pokemonMaker)
 
 pokemonMaker.addEventListener("submit", function (e) {
     e.preventDefault();
-
-    const name = document.querySelector("#p")
     const location = document.querySelector("#l")
-    const move = document.querySelector("#m")
-    const trainer_id = document.querySelector("#t")
-
-    fetch("http://localhost:3000/pokemons", {
-        method: "POST",
-        headers: {
-            'content-Type': 'application/json',
-            'Accept': 'application/json'
+    const name = document.querySelector("#p")
+    
+        fetch("http://localhost:3000/pokemons", {
+            method: "POST",
+            headers: {
+                'content-Type': 'application/json',
+                'Accept': 'application/json'
         },
         body: JSON.stringify({
             pokemon: {
@@ -55,7 +64,26 @@ pokemonMaker.addEventListener("submit", function (e) {
             const pokemonContainer = document.getElementById("poke-container")
             const pokemonEl = document.createElement('p')
             pokemonEl.innerText = pokemon.name
-
+            
             console.log(pokemonEl)
         })
-})
+    })
+
+var sel = document.getElementById("trainer-name");
+    
+function getSelectedOption(sel) {
+  var opt;
+  for (var i = 0, len = sel.options.length; i < len; i++) {
+    opt = sel.options[i];
+    if (opt.selected === true) {
+      break;
+    }
+  }
+  return opt;
+}
+
+ var opt = getSelectedOption(sel);
+
+    // display its value and text
+    console.log(opt.value);
+    console.log(opt.text);
