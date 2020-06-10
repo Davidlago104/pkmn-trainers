@@ -69,21 +69,20 @@ pokemonMaker.addEventListener("submit", function (e) {
         })
     })
 
-var sel = document.getElementById("trainer-name");
+// var sel = document.getElementById("trainer-name");
     
-function getSelectedOption(sel) {
-  var opt;
-  for (var i = 0, len = sel.options.length; i < len; i++) {
-    opt = sel.options[i];
-    if (opt.selected === true) {
-      break;
-    }
-  }
-  return opt;
-}
+// function getSelectedOption(sel) {
+//   var opt;
+//   for (var i = 0, len = sel.options.length; i < len; i++) {
+//     opt = sel.options[i];
+//     if (opt.selected === true) {
+//       break;
+//     }
+//   }
+//   return opt;
+// }
 
- var opt = getSelectedOption(sel);
+//  var opt = getSelectedOption(sel);
 
-    // display its value and text
-    console.log(opt.value);
-    console.log(opt.text);
+//     display its value and text
+
