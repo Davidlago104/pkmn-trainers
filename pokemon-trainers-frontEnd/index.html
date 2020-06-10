@@ -10,18 +10,7 @@
     </head>
     <body>
         <h1>Welcome to the world of pokemon!</h1>
-            <script>
-                function myFunction(){
-                    var x = document.getElementById("poke-form");
-                    
-                    if (x.style.display === "none") {
-                        x.style.display = "block";
-                    }
-                    else {
-                        x.style.display = "none"                    
-                    }
-                }
-                </script>
+
         <div id="poke-form"> 
         <fieldset>
             <form id="pokemon-form" class="" method="POST">
@@ -33,14 +22,18 @@
             </form>
         </fieldset>
                 </div>
-                <button onclick="myFunction()">Click me to toggle the pokemon form!</button>
-
-        <div id="trainer-container" type="text/css" href="style.css">
-            <form id="trainer-form" class="" method="POST">
-                <input id="n" type="text" name="name" placeholder="trainer-name">
-                <input id="a" type="text" name="age" placeholder="age">
-                <input type="submit" name="submit">
-            </form>
+         <button onclick="myFunction()">Click me to toggle the pokemon form!</button>
+        <div id="trainer-field">
+            <fieldset>
+                <div id="trainer-container" type="text/css" href="style.css">
+                    <form id="trainer-form" class="" method="POST">
+                        <input id="n" type="text" name="name" placeholder="trainer-name">
+                        <input id="a" type="text" name="age" placeholder="age">
+                        <input type="submit" name="submit">
+                    </form>
+                </fieldset>
+            </div>
+             <button onclick="myFunction2()">Click me to toggle the trainer form!</button> 
         </div>
         
         <div id="poke-container">
