@@ -24,7 +24,7 @@ pokemonButton.addEventListener("click", function (e) {
             console.log(pokemons)
             const pokemonContainerEmpty = document.getElementById("poke-container")
 
-            pokemonContainerEmpty.innerHTML = " "
+            pokemonContainerEmpty.innerHTML = "ALL THE POKEMON"
 
             pokemons.data.forEach(function (pokemon) {
                 const pokemonEl = document.createElement('p')
@@ -53,7 +53,6 @@ pokemonMaker.addEventListener("submit", function (e) {
                 move: move.value,
                 trainer_id: trainer_id.value
             }
-
         })
     })
         .then(function (res) {
@@ -69,20 +68,41 @@ pokemonMaker.addEventListener("submit", function (e) {
         })
     })
 
-// var sel = document.getElementById("trainer-name");
-    
-// function getSelectedOption(sel) {
-//   var opt;
-//   for (var i = 0, len = sel.options.length; i < len; i++) {
-//     opt = sel.options[i];
-//     if (opt.selected === true) {
-//       break;
-//     }
-//   }
-//   return opt;
+
+    const mockTrainers = new Promise(resolve => {
+        const data = [];
+        setTimeout(() => {
+            resolve(data);
+        }, 2000);
+    })
+
+function populateSelection() {
+    mockTrainers.then(data => {
+        let trainerSelection = document.getElementById("lists");
+        data.forEach(trainer => {
+            let option = document.createElement("option");
+            option.setAttribute("value", trainer);
+            option.innerHTML = trainer;
+            trainerSelection.appendChild(option);
+        });
+    });
+}
+
+populateSelection();
+
+// function trainerSelector() {
+//     fetch("http://localhost:3000/trainers")
+//     .then(response => response.json())
+//     .then(trainers => {
+//         let trainerSelect = trainer_id
+//         trainers.data.forEach(trainer => {
+//             const lists = document.getElementById("lists")
+//             let option = document.createElement("option");
+//             option.setAttribute('text', trainer.attributes.name);
+//             option.setAttribute('text', trainer.id);
+//             option.innerHTML = trainer.attributes.category_name;
+//             trainerSelector.appendChild(option)
+//         })
+//     })
 // }
-
-//  var opt = getSelectedOption(sel);
-
-//     display its value and text
 

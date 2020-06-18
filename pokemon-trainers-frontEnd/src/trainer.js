@@ -39,7 +39,7 @@ trainerButton.addEventListener("click", function (e) {
         .then(function (trainers) {
             const trainerContainerEmpty = document.getElementById("trainer-container-text")
             console.log(trainers)
-            trainerContainerEmpty.innerHTML = " "
+            trainerContainerEmpty.innerHTML = "All THE TRAINERS"
             trainers.data.forEach(function (trainer) {
                 const trainerEl = document.createElement('p')
                 trainerEl.innerText = trainer.attributes.name

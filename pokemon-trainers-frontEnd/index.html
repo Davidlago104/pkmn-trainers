@@ -5,7 +5,6 @@
         <title>Pokemon!</title>
         <div class="button" href="">
             <button id="homeButton">Home</button>
-
         </div>
     </head>
     <body>
@@ -17,38 +16,46 @@
                 <input id="p" type="text" name="pokemon" placeholder="name">
                 <input id="l" type="text" name="location" placeholder="location">
                 <input id="m" type="text" name="move" placeholder="move">
-                <input id="t" type="text" name="trainer_id" placeholder="trainer-id">
+                <select name="list" id="lists">
+                    <option disable selected value>-- select an option --</option>                </select>  
                 <input type="submit" name="submit">
             </form>
         </fieldset>
-                </div>
+        </div>
          <button onclick="myFunction()">Click me to toggle the pokemon form!</button>
+<br />
+<br />
         <div id="trainer-field">
-            <fieldset>
-                <div id="trainer-container" type="text/css" href="style.css">
-                    <form id="trainer-form" class="" method="POST">
-                        <input id="n" type="text" name="name" placeholder="trainer-name">
-                        <input id="a" type="text" name="age" placeholder="age">
-                        <input type="submit" name="submit">
-                    </form>
-                </fieldset>
+        <fieldset>
+            <div id="trainer-container" type="text/css" href="style.css">
+                <form id="trainer-form" class="" method="POST">
+                    <input id="n" type="text" name="name" placeholder="trainer-name">
+                    <input id="a" type="text" name="age" placeholder="age">
+                    <input type="submit" name="submit">
+                </form>
+        </fieldset>
             </div>
-             <button onclick="myFunction2()">Click me to toggle the trainer form!</button> 
+        <button onclick="myFunction2()">Click me to toggle the trainer form!</button> 
         </div>
         
         <div id="poke-container">
-            
+
         </div>
         
         <div id="trainer-container-text">
-            
+         
         </div>
         
-        
+        <br>  
+        <br>  
+
         <button id="show-pokemon" type="button" name="button">Click me to see the pokemans</button>
+
+        <br>
+        <br>
+
         <button id="show-trainers" type="button" name="button">Click me to see the trainers</button>
         
-        <div id="app"></div>
         <script src='src/index.js'></script>
         <script type="text/javascript" src="src/trainer.js"></script>
         <script type="text/javascript" src="src/pokemon.js"></script>
