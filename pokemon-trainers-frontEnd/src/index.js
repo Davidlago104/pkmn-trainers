@@ -1,5 +1,9 @@
-
 const homeButtonWorking = document.getElementById("homeButton")
+
+document.addEventListener("DOMContentLoaded", () => {
+  console.log("loaded");
+  trainerSelect();
+});
 
 homeButtonWorking.addEventListener("click", function(){
     // alert("working?")
@@ -26,4 +30,18 @@ function myFunction2() {
      }
  }
 
- 
+function trainerSelect() {
+  fetch("http://localhost:3000/trainers")
+    .then((response) => response.json())
+    .then((trainers) => {
+      console.log(trainers);
+      let trainerSelect = document.querySelector("#trainer-select");
+      trainers.data.forEach((trainer) => {
+        let option = document.createElement("option");
+        option.setAttribute("text", trainer.attributes.name);
+        option.setAttribute("value", trainer.id);
+        option.innerHTML = trainer.attributes.name;
+        trainerSelect.appendChild(option);
+      });
+    });
+}

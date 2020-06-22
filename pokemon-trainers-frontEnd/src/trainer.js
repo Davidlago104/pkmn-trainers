@@ -47,3 +47,6 @@ trainerButton.addEventListener("click", function (e) {
             })
         })
 })
+
+
+// populateSelection();
