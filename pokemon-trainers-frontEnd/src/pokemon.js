@@ -38,7 +38,7 @@ pokemonMaker.addEventListener("submit", function (e) {
     const location = document.querySelector("#l")
     const name = document.querySelector("#p")
     const move = document.querySelector("#m")
-    const trainer_id = document.querySelector("#t")
+    const trainer_id = document.querySelector("#trainer-select")
     
         fetch("http://localhost:3000/pokemons", {
             method: "POST",
@@ -66,4 +66,3 @@ pokemonMaker.addEventListener("submit", function (e) {
             console.log(pokemonEl)
         })
     })
-
