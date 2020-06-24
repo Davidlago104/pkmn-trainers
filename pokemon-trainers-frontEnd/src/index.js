@@ -1,13 +1,17 @@
 const homeButtonWorking = document.getElementById("homeButton")
 
 document.addEventListener("DOMContentLoaded", () => {
-  console.log("loaded");
-  trainerSelect();
+    console.log("loaded");
+    trainerSelect();
 
-  const getPokemonForm = document.querySelector("#pokemon-form")
+    const getPokemonForm = document.querySelector("#pokemon-form")
+    const getTrainerForm = document.querySelector("#trainer-form")
 
-  getPokemonForm.addEventListener("submit", (e) =>
-  createFormHandler(e))
+    getPokemonForm.addEventListener("submit", (e) =>
+    createFormPokemon(e));
+
+    getTrainerForm.addEventListener("submit", (e) =>
+    createFormTrainer(e));
 });
 
 function trainerSelect() {
@@ -42,7 +46,7 @@ function myFunction() {
  }
  
 function myFunction2() {
-    var x = document.getElementById("trainer-field");
+    var x = document.getElementById("trainer-form");
 
     if (x.style.display === "none") {
         x.style.display = "block";
@@ -51,15 +55,26 @@ function myFunction2() {
      }
  }
 
-function createFormHandler(e){
+function createFormPokemon(e){
     e.preventDefault()
     const nameInput = document.querySelector("#p").value
     const locationInput = document.querySelector("#l").value
     const moveInput = document.querySelector("#m").value
     const trainerId = parseInt(document.querySelector("#trainer-select").value)
-    postFetch(nameInput, locationInput, moveInput, trainerId)
+    postFetchPokemon(nameInput, locationInput, moveInput, trainerId)
+}
+function createFormTrainer(e){
+    e.preventDefault()
+    const trainerInput = document.querySelector("#n").value
+    const ageInput = document.querySelector("#a").value
+    postFetchTrainer(trainerInput, ageInput)
+
 }
 
-function postFetch (nameInput, locationInput, moveInput, trainerId){
-    console.log(nameInput, locationInput, moveInput, trainerId);
+function postFetchPokemon (nameInput, locationInput, moveInput, trainerId){
+    console.log(nameInput, locationInput, moveInput, trainerId)
+}
+
+function postFetchTrainer (trainerInput, ageInput){
+    console.log(trainerInput, ageInput)
 }
