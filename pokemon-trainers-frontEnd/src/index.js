@@ -53,6 +53,13 @@ function myFunction2() {
 
 function createFormHandler(e){
     e.preventDefault()
-    console.log(e);
+    const nameInput = document.querySelector("#p").value
+    const locationInput = document.querySelector("#l").value
+    const moveInput = document.querySelector("#m").value
+    const trainerId = parseInt(document.querySelector("#trainer-select").value)
+    postFetch(nameInput, locationInput, moveInput, trainerId)
 }
 
+function postFetch (nameInput, locationInput, moveInput, trainerId){
+    console.log(nameInput, locationInput, moveInput, trainerId);
+}
