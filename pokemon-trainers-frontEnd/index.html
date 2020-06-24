@@ -8,21 +8,24 @@
         </div>
     </head>
     <body>
+    <div class="boxhead" style="text-align: center;">
+        <link rel="stylesheet" href="application.css" type="text/css">
         <h1>Welcome to the world of pokemon!</h1>
-
+        
         <div id="poke-form"> 
-        <fieldset>
-            <form id="pokemon-form" class="">
-                <input id="p" type="text" name="pokemon" placeholder="name">
-                <input id="l" type="text" name="location" placeholder="location">
-                <input id="m" type="text" name="move" placeholder="move">
-                <select name="list" id="trainer-select">
-                    <option disable selected value>-- select an option --</option>                
-                </select>  
-                <input type="submit" name="submit">
-            </form>
-        </fieldset>
+            <fieldset>
+                <form id="pokemon-form" class="">
+                    <input id="p" type="text" name="pokemon" placeholder="name">
+                    <input id="l" type="text" name="location" placeholder="location">
+                    <input id="m" type="text" name="move" placeholder="move">
+                    <select name="list" id="trainer-select">
+                        <option disable selected value>-- select an option --</option>                
+                    </select>  
+                    <input type="submit" name="submit">
+                </form>
+            </fieldset>
         </div>
+    </div>
          <button onclick="myFunction()">Click me to toggle the pokemon form!</button>
 <br />
 <br />
@@ -39,23 +42,20 @@
         <button onclick="myFunction2()">Click me to toggle the trainer form!</button> 
         </div>
         
-        <div id="poke-container">
-
+        <div id="poke-container" class="boxhead" style="text-align: center;">
         </div>
         
-        <div id="trainer-container-text">
-         
+        <div id="trainer-container-text" class="boxhead" style="text-align: center;">
         </div>
         
         <br>  
-        <br>  
-
-        <button id="show-pokemon" type="button" name="button">Click me to see the pokemans</button>
-
+        <div class="boxhead" style="text-align: center;">
+            <button id="show-pokemon" type="button" name="button">Click me to see the pokemans</button>
+        </div>
         <br>
-        <br>
-
-        <button id="show-trainers" type="button" name="button">Click me to see the trainers</button>
+        <div class="boxhead" style="text-align: center;">
+            <button id="show-trainers" type="button" name="button">Click me to see the trainers</button>
+        </div>
         
         <script src='src/index.js'></script>
         <script type="text/javascript" src="src/trainer.js"></script>
