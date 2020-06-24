@@ -26,8 +26,13 @@ pokemonButton.addEventListener("click", function (e) {
         
         pokemons.data.forEach(function (pokemon) {
             const pokemonEl = document.createElement('p')
+            const deleteButton = document.createElement('button')
+
+            deleteButton.setAttribute("data-id", pokemon.id)
+            deleteButton.innerText = "delete"
             pokemonEl.innerText = pokemon.attributes.name
             pokemonContainer.appendChild(pokemonEl)
+            pokemonContainer.appendChild(deleteButton)
         })
     })
 })
@@ -66,3 +71,5 @@ pokemonMaker.addEventListener("submit", function (e) {
             console.log(pokemonEl)
         })
     })
+
+    // event listener, delete fetch request and capture the id then be able to delete
