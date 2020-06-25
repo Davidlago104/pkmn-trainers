@@ -15,8 +15,6 @@ puts "making seeds!"
         trainer_id: 1
     }])
 end
-pokemons = Pokemon.create(name:"Pikachu", location:"Pallet Town", move:"Thundershock", trainer_id: 1)
-trainers = Trainer.create(name: "David", age: 24)
 puts "all done!"
 
 

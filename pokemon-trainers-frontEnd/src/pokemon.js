@@ -7,9 +7,7 @@ class Pokemon {
         this.location = location;
         this.move = move;
         this.trainer_id = trainer_id;
-    }
-    cry() {
-        return `${this.name}`;
+        // this.id = id;
     }
 }
 pokemonButton.addEventListener("click", function (e) {
@@ -72,4 +70,25 @@ pokemonMaker.addEventListener("submit", function (e) {
         })
     })
 
+// pokemonButton.addEventListener("click", function (e){
+
+//     fetch("http://localhost:3000/pokemons", {
+//       method: "GET",
+//       headers: {
+//         "content-Type": "application/json",
+//         Accept: "application/json",
+//       },
+//       body: JSON.stringify({
+//         pokemon: {
+//           id: id.value
+//         }
+//       })
+//     })
+//     .then(function (res) {
+//       return res.json;
+//     })
+//     .then(function (pkmnId) {
+//         console.log(pkmnId)
+//     })
+// })
     // event listener, delete fetch request and capture the id then be able to delete
