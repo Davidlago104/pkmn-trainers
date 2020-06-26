@@ -1,5 +1,11 @@
 const pokemonMaker = document.getElementById("pokemon-form")
 const pokemonButton = document.getElementById("show-pokemon")
+const options = {
+    method: "DELETE",
+    headers: {
+        "Content-Type": "application/json",
+    },
+};
 
 class Pokemon {
     constructor(name, location, move, trainer_id){
@@ -82,11 +88,4 @@ pokemonMaker.addEventListener("submit", function (e) {
             console.log(pokemonEl)
         })
     })
-// event listener, delete fetch request and capture the id then be able to delete
-
-const options = {
-  method: "DELETE",
-  headers: {
-    "Content-Type": "application/json",
-  },
-};
+    
