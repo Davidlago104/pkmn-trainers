@@ -7,9 +7,9 @@ class Pokemon {
         this.location = location;
         this.move = move;
         this.trainer_id = trainer_id;
-        // this.id = id;
     }
 }
+
 pokemonButton.addEventListener("click", function (e) {
     fetch('http://localhost:3000/pokemons')
     .then(function (res) {
@@ -31,6 +31,19 @@ pokemonButton.addEventListener("click", function (e) {
             pokemonEl.innerText = pokemon.attributes.name
             pokemonContainer.appendChild(pokemonEl)
             pokemonContainer.appendChild(deleteButton)
+
+            deleteButton.addEventListener("click", function(){
+                // deleteButton.dataset.id // add delete fetch request
+                return fetch(`http://localhost:3000/pokemons`, options)
+                .then(res => {
+                    if (res.ok){
+                        return Promise.resolve('Pokemon Deleted')
+                    } else {
+                        return Promise.reject("An Error has occured")
+                    }
+                })
+                .then(res=> console.log(res));
+            })
         })
     })
 })
@@ -69,26 +82,11 @@ pokemonMaker.addEventListener("submit", function (e) {
             console.log(pokemonEl)
         })
     })
+// event listener, delete fetch request and capture the id then be able to delete
 
-// pokemonButton.addEventListener("click", function (e){
-
-//     fetch("http://localhost:3000/pokemons", {
-//       method: "GET",
-//       headers: {
-//         "content-Type": "application/json",
-//         Accept: "application/json",
-//       },
-//       body: JSON.stringify({
-//         pokemon: {
-//           id: id.value
-//         }
-//       })
-//     })
-//     .then(function (res) {
-//       return res.json;
-//     })
-//     .then(function (pkmnId) {
-//         console.log(pkmnId)
-//     })
-// })
-    // event listener, delete fetch request and capture the id then be able to delete
+const options = {
+  method: "DELETE",
+  headers: {
+    "Content-Type": "application/json",
+  },
+};

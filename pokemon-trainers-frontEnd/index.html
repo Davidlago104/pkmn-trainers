@@ -10,10 +10,9 @@
     <br>
     <body>
     <div class="h1" style="text-align: center;">
-        <link rel="stylesheet" href="application.css" type="text/css">
-        <h1>Welcome to the world of pokemon!</h1>
-    
-        <div id="poke-form"> 
+    <link rel="stylesheet" href="application.css" type="text/css">
+    <h1>Welcome to the world of pokemon!</h1>
+        <div id="poke-form" class=""> 
             <form id="pokemon-form" class="">
                 <input id="p" type="text" name="pokemon" placeholder="name">
                 <input id="l" type="text" name="location" placeholder="location">
@@ -27,22 +26,19 @@
         <button onclick="myFunction()">Click me to toggle the pokemon form!</button>
         <br />
         <br />
-        <div id="trainer-field">
-            <div id="trainer-container" type="text/css" href="style.css">
-                <form id="trainer-form" class="">
-                    <input id="n" type="text" name="name" placeholder="trainer-name">
-                    <input id="a" type="text" name="age" placeholder="age">
-                    <input type="submit" name="submit" class="">
-                </form>
-            </div>
-            <button onclick="myFunction2()">Click me to toggle the trainer form!</button> 
+        <div id="trainer-container" type="text/css" href="style.css" class="">
+        <form id="trainer-form" class="">
+            <input id="n" type="text" name="name" placeholder="trainer-name">
+            <input id="a" type="text" name="age" placeholder="age">
+            <input type="submit" name="submit" class="">
+        </form>
         </div>
-    </div>
-        
+            <button onclick="myFunction2()">Click me to toggle the trainer form!</button> 
+    </div>        
         <div id="poke-container" class="h1" style="text-align: center;">
         </div>
         
-        <div id="trainer-container-text" class="boxhead" style="text-align: center;">
+        <div id="trainer-container-text" class="h1" style="text-align: center;">
         </div>
         
         <div class="h1" style="text-align: center;">
@@ -53,9 +49,8 @@
             <button id="show-trainers" type="button" class ="button" name="button">Click me to see the trainers</button>
         </div>
         
-        <script src='src/index.js'></script>
-        <script type="text/javascript" src="src/trainer.js"></script>
-        <script type="text/javascript" src="src/pokemon.js"></script>
-
+    <script src='src/index.js'></script>
+    <script type="text/javascript" src="src/trainer.js"></script>
+    <script type="text/javascript" src="src/pokemon.js"></script>
     </body>
 </html>
