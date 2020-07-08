@@ -1,12 +1,5 @@
 const pokemonMaker = document.getElementById("pokemon-form")
 const pokemonButton = document.getElementById("show-pokemon")
-const options = {
-    method: "DELETE",
-    headers: {
-        "Content-Type": "application/json",
-    },
-};
-
 class Pokemon {
     constructor(name, location, move, trainer_id){
         this.name = name;
@@ -14,9 +7,10 @@ class Pokemon {
         this.move = move;
         this.trainer_id = trainer_id;
     }
-}
+};
 
 pokemonButton.addEventListener("click", function (e) {
+
     fetch('http://localhost:3000/pokemons')
     .then(function (res) {
         return res.json()
@@ -33,27 +27,34 @@ pokemonButton.addEventListener("click", function (e) {
             const deleteButton = document.createElement('button')
 
             deleteButton.setAttribute("data-id", pokemon.id)
+            deleteButton.className = "deleteButton"
             deleteButton.innerText = "delete"
             pokemonEl.innerText = pokemon.attributes.name
             pokemonContainer.appendChild(pokemonEl)
             pokemonContainer.appendChild(deleteButton)
-
-            deleteButton.addEventListener("click", function(){
-                // deleteButton.dataset.id // add delete fetch request
-                return fetch(`http://localhost:3000/pokemons`, options)
-                .then(res => {
-                    if (res.ok){
-                        return Promise.resolve('Pokemon Deleted')
-                    } else {
-                        return Promise.reject("An Error has occured")
-                    }
-                })
-                .then(res=> console.log(res));
-            })
         })
+        deletePokemon();
     })
 })
 
+function deletePokemon() {
+    document.addEventListener("click", function(e){
+        if (e.target.className == "deleteButton") {
+            let id = e.target.dataset.id // add delete fetch request
+            fetch(`http://localhost:3000/pokemons/${id}`, {
+                method: "DELETE"
+            })
+            .then((res) => res.text())
+            .then((res) => {
+                console.log(res) // find div name, and remove.
+                //step 1: creating pokemon divs w/ data-id that wrap each p tag and delete
+                //step 2: query for that div based on id
+                //step 3: set the inner HTML on the found div to an empty string
+            })
+            .then(id.remove) //queryfor the div
+        }
+    })
+}
 
 pokemonMaker.addEventListener("submit", function (e) {
     // e.preventDefault();

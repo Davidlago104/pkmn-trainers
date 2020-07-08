@@ -37,12 +37,14 @@ class PokemonsController < ApplicationController
   # DELETE /pokemons/1
   def destroy
     @pokemon.destroy
+    render json: @pokemon
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_pokemon
       @pokemon = Pokemon.find(params[:id])
+      render json: @pokemon
     end
 
     # Only allow a trusted parameter "white list" through.
