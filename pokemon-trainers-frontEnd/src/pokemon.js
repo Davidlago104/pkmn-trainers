@@ -24,37 +24,37 @@ pokemonButton.addEventListener("click", function (e) {
         
         pokemons.data.forEach(function (pokemon) {
             const pokemonEl = document.createElement('p')
-            const deleteButton = document.createElement('button')
+            // const deleteButton = document.createElement('button')
 
-            deleteButton.setAttribute("data-id", pokemon.id)
-            deleteButton.className = "deleteButton"
-            deleteButton.innerText = "delete"
+            // deleteButton.setAttribute("data-id", pokemon.id)
+            // deleteButton.className = "deleteButton"
+            // deleteButton.innerText = "delete"
             pokemonEl.innerText = pokemon.attributes.name
             pokemonContainer.appendChild(pokemonEl)
-            pokemonContainer.appendChild(deleteButton)
+            // pokemonContainer.appendChild(deleteButton)
         })
-        deletePokemon();
+        // deletePokemon();
     })
 })
 
-function deletePokemon() {
-    document.addEventListener("click", function(e){
-        if (e.target.className == "deleteButton") {
-            let id = e.target.dataset.id // add delete fetch request
-            fetch(`http://localhost:3000/pokemons/${id}`, {
-                method: "DELETE"
-            })
-            .then((res) => res.text())
-            .then((res) => {
-                console.log(res) // find div name, and remove.
-                //step 1: creating pokemon divs w/ data-id that wrap each p tag and delete
-                //step 2: query for that div based on id
-                //step 3: set the inner HTML on the found div to an empty string
-            })
-            .then(id.remove) //queryfor the div
-        }
-    })
-}
+// function deletePokemon() {
+//     document.addEventListener("click", function(e){
+//         if (e.target.className == "deleteButton") {
+//             let id = e.target.dataset.id // add delete fetch request
+//             fetch(`http://localhost:3000/pokemons/${id}`, {
+//                 method: "DELETE"
+//             })
+//             .then((res) => res.text())
+//             .then((res) => {
+//                 console.log(res) // find div name, and remove.
+//                 //step 1: creating pokemon divs w/ data-id that wrap each p tag and delete
+//                 //step 2: query for that div based on id
+//                 //step 3: set the inner HTML on the found div to an empty string
+//             })
+//             // .then(id.remove) //queryfor the div
+//         }
+//     })
+// }
 
 pokemonMaker.addEventListener("submit", function (e) {
     // e.preventDefault();
