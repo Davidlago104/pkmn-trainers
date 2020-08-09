@@ -9,32 +9,32 @@
     </head>
     <br>
     <body>
-    <div class="h1" style="text-align: center;">
-    <link rel="stylesheet" href="application.css" type="text/css">
-    <h1>Welcome to the world of pokemon!</h1>
-        <div id="poke-form" class=""> 
-            <form id="pokemon-form" class="">
-                <input id="p" type="text" name="pokemon" placeholder="name">
-                <input id="l" type="text" name="location" placeholder="location">
-                <input id="m" type="text" name="move" placeholder="move">
-                <select name="list" id="trainer-select">
-                    <option disable selected value>-- select an option --</option>                
-                </select>  
-                <input type="submit" name="submit">
-            </form>
-        </div>
-        <button onclick="myFunction()">Click me to toggle the pokemon form!</button>
-        <br />
-        <br />
-        <div id="trainer-container" type="text/css" href="style.css" class="">
-        <form id="trainer-form" class="">
-            <input id="n" type="text" name="name" placeholder="trainer-name">
-            <input id="a" type="text" name="age" placeholder="age">
-            <input type="submit" name="submit" class="">
-        </form>
-        </div>
+        <div class="h1" style="text-align: center;">
+            <link rel="stylesheet" href="application.css" type="text/css">
+            <h1>Welcome to the world of pokemon!</h1>
+            <div id="poke-form" class=""> 
+                <form id="pokemon-form" class="">
+                    <input id="p" type="text" name="pokemon" placeholder="name">
+                    <input id="l" type="text" name="location" placeholder="location">
+                    <input id="m" type="text" name="move" placeholder="move">
+                    <select name="list" id="trainer-select">
+                        <option disable selected value>-- select an option --</option>                
+                    </select>  
+                    <input type="submit" name="submit">
+                </form>
+            </div>
+            <button onclick="myFunction()">Click me to toggle the pokemon form!</button>
+            <br />
+            <br />
+            <div id="trainer-container" type="text/css" href="style.css" class="">
+                <form id="trainer-form" class="">
+                    <input id="n" type="text" name="name" placeholder="trainer-name">
+                    <input id="a" type="text" name="age" placeholder="age">
+                    <input type="submit" name="submit" class="">
+                </form>
+            </div>
             <button onclick="myFunction2()">Click me to toggle the trainer form!</button> 
-    </div>        
+        </div>        
         <div id="poke-container" class="h1" style="text-align: center;">
             
         </div>
@@ -45,13 +45,17 @@
         <div class="h1" style="text-align: center;">
             <button id="show-pokemon" type="button" class="button" name="button">Click me to see the pokemans</button>
         </div>
-
+        
         <div class="h1" style="text-align: center;">
             <button id="show-trainers" type="button" class ="button" name="button">Click me to see the trainers</button>
         </div>
         
-    <script src='src/index.js'></script>
-    <script type="text/javascript" src="src/trainer.js"></script>
-    <script type="text/javascript" src="src/pokemon.js"></script>
+        <div id="sortedPokemon">
+            <button id="sort">Sort the pokemon</button>
+        </div>
+        
+        <script src='src/index.js'></script>
+        <script type="text/javascript" src="src/trainer.js"></script>
+        <script type="text/javascript" src="src/pokemon.js"></script>
     </body>
 </html>

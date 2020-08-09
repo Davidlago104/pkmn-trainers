@@ -1,5 +1,6 @@
 const pokemonMaker = document.getElementById("pokemon-form")
 const pokemonButton = document.getElementById("show-pokemon")
+const sortButton = document.getElementById("sort")
 class Pokemon {
     constructor(name, location, move, trainer_id){
         this.name = name;
@@ -24,37 +25,38 @@ pokemonButton.addEventListener("click", function (e) {
         
         pokemons.data.forEach(function (pokemon) {
             const pokemonEl = document.createElement('p')
-            // const deleteButton = document.createElement('button')
 
-            // deleteButton.setAttribute("data-id", pokemon.id)
-            // deleteButton.className = "deleteButton"
-            // deleteButton.innerText = "delete"
             pokemonEl.innerText = pokemon.attributes.name
             pokemonContainer.appendChild(pokemonEl)
-            // pokemonContainer.appendChild(deleteButton)
         })
-        // deletePokemon();
     })
 })
 
-// function deletePokemon() {
-//     document.addEventListener("click", function(e){
-//         if (e.target.className == "deleteButton") {
-//             let id = e.target.dataset.id // add delete fetch request
-//             fetch(`http://localhost:3000/pokemons/${id}`, {
-//                 method: "DELETE"
-//             })
-//             .then((res) => res.text())
-//             .then((res) => {
-//                 console.log(res) // find div name, and remove.
-//                 //step 1: creating pokemon divs w/ data-id that wrap each p tag and delete
-//                 //step 2: query for that div based on id
-//                 //step 3: set the inner HTML on the found div to an empty string
-//             })
-//             // .then(id.remove) //queryfor the div
-//         }
-//     })
-// }
+sortButton.addEventListener("click", function(e) {
+   fetch("http://localhost:3000/pokemons")
+   .then(function(res) {
+       return res.json()
+   })
+   .then(function (pokemons) {
+        pokemons.data.sort(function (a, b) {
+        var nameA = a.attributes.name.toUpperCase(); // ignore upper and lowercase
+        var nameB = b.attributes.name.toUpperCase(); // ignore upper and lowercase
+        if (nameA < nameB) {
+            return -1;
+        }
+        if (nameA > nameB) {
+            return 1;
+        }
+
+        // names must be equal
+        return 0;
+        });
+
+        const sortpkmn = document.getElementById("sortedPokemon");
+        const pokemonP = document.createElement("p");
+        // pokemonEl.innerText = pokemons.name;
+    })
+})
 
 pokemonMaker.addEventListener("submit", function (e) {
     // e.preventDefault();
