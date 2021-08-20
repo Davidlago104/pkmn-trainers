@@ -106,6 +106,4 @@ pokemonMaker.addEventListener("submit", function () {
                 let newPokemon = new Pokemon(pokemon, pokemon.attributes);
                 document.querySelector("#poke-container").innerHTML += newPokemon.renderPokemon();
              });
-})
-                        
-                        
+})                   
