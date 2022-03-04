@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
     createFormTrainer(e));
 });
 
+// While creating a pokemon, the trainer can be selected through a dropdown
 function trainerSelect() {
   fetch("http://localhost:3000/trainers")
     .then((response) => response.json())
@@ -55,6 +56,7 @@ function myFunction2() {
      }
  }
 
+//  creates a pokemon through the form, with help from the backend
 function createFormPokemon(e){
     e.preventDefault()
     const nameInput = document.querySelector("#p").value
@@ -63,6 +65,8 @@ function createFormPokemon(e){
     const trainerId = parseInt(document.querySelector("#trainer-select").value)
     postFetchPokemon(nameInput, locationInput, moveInput, trainerId)
 }
+
+// creates a trainer with the help of the backend
 function createFormTrainer(e){
     e.preventDefault()
     const trainerInput = document.querySelector("#n").value
@@ -70,11 +74,12 @@ function createFormTrainer(e){
     postFetchTrainer(trainerInput, ageInput)
 
 }
-
+// prints the pokemon along with trainer id
 function postFetchPokemon (nameInput, locationInput, moveInput, trainerId){
     console.log(nameInput, locationInput, moveInput, trainerId)
 }
 
+// prints trainer information
 function postFetchTrainer (trainerInput, ageInput){
     console.log(trainerInput, ageInput)
 }

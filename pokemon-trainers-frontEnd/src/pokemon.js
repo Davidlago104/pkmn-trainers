@@ -2,6 +2,7 @@ const pokemonMaker = document.getElementById("pokemon-form")
 const pokemonButton = document.getElementById("show-pokemon")
 const sortButton = document.getElementById("sort")
 const endPoint = "http://localhost:3000/pokemons"
+
 class Pokemon {
     constructor(pokemon, pokemonAttributes){
         this.id = pokemon.id;
@@ -13,7 +14,6 @@ class Pokemon {
     }
     
     renderPokemon() {
-        
         return `
         <div data-id=${this.id}>
         <h3>${this.name}</h3>
@@ -24,6 +24,7 @@ class Pokemon {
 
 Pokemon.all = [];
 
+// displays all pokemon on the main page
 pokemonButton.addEventListener("click", function (e) {
     
     fetch(endPoint)
@@ -43,7 +44,9 @@ pokemonButton.addEventListener("click", function (e) {
         })
     })
 })
+
 console.log(sortButton)
+// sorts all of the pokemon 
 sortButton.addEventListener("click", function(e) {
     console.log(sortButton)
     fetch(endPoint)
@@ -78,8 +81,8 @@ sortButton.addEventListener("click", function(e) {
     })
 })
 
+// helps create the pokemon from the form and send it to the backend
 pokemonMaker.addEventListener("submit", function () {
-    // e.preventDefault();
     const location = document.querySelector("#l")
     const name = document.querySelector("#p")
     const move = document.querySelector("#m")
