@@ -1,3 +1,12 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Righteous', cursive;
+  color: #919494;
+}
+
+
 .container {
   text-align: center;
   color:rgb(238,207,115);
@@ -96,5 +105,5 @@ text-shadow:none;
 }
 
 h1 {
-  
+
 }
